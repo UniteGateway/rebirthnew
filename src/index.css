@@ -2,102 +2,104 @@
 @tailwind components;
 @tailwind utilities;
 
-/* REBIRTH Design System - Colors inspired by the calendar-heart logo */
-/* Blue, Coral/Peach, Warm Beige palette */
+/* REBIRTH Design System - Colors from logo */
+/* Green, Blue, Orange/Sunrise palette */
 
 @layer base {
   :root {
-    /* Warm beige/cream background */
-    --background: 35 40% 97%;
-    --foreground: 220 25% 20%;
+    /* Clean white/cream background */
+    --background: 45 30% 98%;
+    --foreground: 200 25% 20%;
 
     /* Card styling */
-    --card: 35 45% 99%;
-    --card-foreground: 220 25% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 200 25% 20%;
 
-    --popover: 35 45% 99%;
-    --popover-foreground: 220 25% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 25% 20%;
 
-    /* Primary: Deep teal-blue from logo */
-    --primary: 195 65% 35%;
+    /* Primary: Sky blue from logo hand */
+    --primary: 200 75% 50%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary: Soft coral/peach from logo heart */
-    --secondary: 15 75% 85%;
-    --secondary-foreground: 220 25% 20%;
+    /* Secondary: Green from logo hand */
+    --secondary: 130 60% 40%;
+    --secondary-foreground: 0 0% 100%;
 
-    /* Muted: Warm gray-beige */
-    --muted: 30 20% 94%;
-    --muted-foreground: 220 15% 45%;
+    /* Muted: Soft neutral */
+    --muted: 45 20% 94%;
+    --muted-foreground: 200 15% 45%;
 
-    /* Accent: Coral/salmon from logo */
-    --accent: 12 80% 70%;
+    /* Accent: Warm orange from logo sun */
+    --accent: 30 90% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 25% 88%;
-    --input: 30 25% 88%;
-    --ring: 195 65% 35%;
+    --border: 45 20% 88%;
+    --input: 45 20% 88%;
+    --ring: 200 75% 50%;
 
     --radius: 0.75rem;
 
-    /* Custom brand colors */
-    --coral: 12 80% 70%;
-    --coral-light: 15 75% 85%;
-    --teal: 195 65% 35%;
-    --teal-light: 195 50% 50%;
-    --beige: 35 40% 95%;
-    --cream: 35 45% 99%;
+    /* Custom brand colors from logo */
+    --green: 130 60% 40%;
+    --green-light: 130 50% 55%;
+    --blue: 200 75% 50%;
+    --blue-light: 200 65% 60%;
+    --orange: 30 90% 55%;
+    --orange-light: 35 85% 65%;
+    --sunrise: 40 95% 60%;
+    --brown: 25 40% 30%;
 
-    --sidebar-background: 35 40% 97%;
-    --sidebar-foreground: 220 25% 20%;
-    --sidebar-primary: 195 65% 35%;
+    --sidebar-background: 45 30% 98%;
+    --sidebar-foreground: 200 25% 20%;
+    --sidebar-primary: 200 75% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 15 75% 85%;
-    --sidebar-accent-foreground: 220 25% 20%;
-    --sidebar-border: 30 25% 88%;
-    --sidebar-ring: 195 65% 35%;
+    --sidebar-accent: 130 60% 40%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 45 20% 88%;
+    --sidebar-ring: 200 75% 50%;
   }
 
   .dark {
-    --background: 220 25% 10%;
-    --foreground: 35 40% 95%;
+    --background: 200 25% 10%;
+    --foreground: 45 30% 95%;
 
-    --card: 220 25% 12%;
-    --card-foreground: 35 40% 95%;
+    --card: 200 25% 12%;
+    --card-foreground: 45 30% 95%;
 
-    --popover: 220 25% 12%;
-    --popover-foreground: 35 40% 95%;
+    --popover: 200 25% 12%;
+    --popover-foreground: 45 30% 95%;
 
-    --primary: 195 55% 50%;
-    --primary-foreground: 220 25% 10%;
+    --primary: 200 70% 55%;
+    --primary-foreground: 200 25% 10%;
 
-    --secondary: 15 60% 30%;
-    --secondary-foreground: 35 40% 95%;
+    --secondary: 130 50% 45%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 20% 18%;
-    --muted-foreground: 30 20% 65%;
+    --muted: 200 20% 18%;
+    --muted-foreground: 45 20% 65%;
 
-    --accent: 12 70% 55%;
+    --accent: 30 85% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 20%;
-    --input: 220 20% 20%;
-    --ring: 195 55% 50%;
+    --border: 200 20% 20%;
+    --input: 200 20% 20%;
+    --ring: 200 70% 55%;
 
-    --sidebar-background: 220 25% 10%;
-    --sidebar-foreground: 35 40% 95%;
-    --sidebar-primary: 195 55% 50%;
-    --sidebar-primary-foreground: 220 25% 10%;
-    --sidebar-accent: 15 60% 30%;
-    --sidebar-accent-foreground: 35 40% 95%;
-    --sidebar-border: 220 20% 20%;
-    --sidebar-ring: 195 55% 50%;
+    --sidebar-background: 200 25% 10%;
+    --sidebar-foreground: 45 30% 95%;
+    --sidebar-primary: 200 70% 55%;
+    --sidebar-primary-foreground: 200 25% 10%;
+    --sidebar-accent: 130 50% 45%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 200 20% 20%;
+    --sidebar-ring: 200 70% 55%;
   }
 }
 
