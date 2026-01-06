@@ -1,4 +1,4 @@
-import { useState } from "react";
+import * as React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { useAuth } from "@/hooks/useAuth";
+import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
 import rebirthLogo from "@/assets/rebirth-logo.png";
 
@@ -28,7 +28,7 @@ const ngoSchema = z.object({
 type NgoForm = z.infer<typeof ngoSchema>;
 
 export default function NgoRegister() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = React.useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
   const { user } = useAuth();

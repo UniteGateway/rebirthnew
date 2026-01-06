@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import * as React from "react";
 import { useNavigate, useSearchParams, Link } from "react-router-dom";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { useAuth } from "@/hooks/useAuth";
+import { useAuth } from "@/contexts/AuthContext";
 import rebirthLogo from "@/assets/rebirth-logo.png";
 
 const loginSchema = z.object({
@@ -31,15 +31,15 @@ type RegisterForm = z.infer<typeof registerSchema>;
 
 export default function Auth() {
   const [searchParams] = useSearchParams();
-  const [isRegister, setIsRegister] = useState(searchParams.get("mode") === "register");
-  const [showPassword, setShowPassword] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isRegister, setIsRegister] = React.useState(searchParams.get("mode") === "register");
+  const [showPassword, setShowPassword] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
   const { user, signIn, signUp } = useAuth();
 
   // Redirect if already logged in
-  useEffect(() => {
+  React.useEffect(() => {
     if (user) {
       navigate("/dashboard");
     }

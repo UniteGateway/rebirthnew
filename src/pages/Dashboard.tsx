@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import * as React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { 
   Users, Award, PartyPopper, Building2, Plus, LogOut, 
   Settings, ChevronRight, Calendar 
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useAuth } from "@/hooks/useAuth";
+import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
 import rebirthLogo from "@/assets/rebirth-logo.png";
 
@@ -24,17 +24,17 @@ interface Stats {
 export default function Dashboard() {
   const { user, loading, signOut } = useAuth();
   const navigate = useNavigate();
-  const [ngo, setNgo] = useState<NGO | null>(null);
-  const [stats, setStats] = useState<Stats>({ children: 0, certificates: 0, celebrations: 0 });
-  const [hasNgo, setHasNgo] = useState<boolean | null>(null);
+  const [ngo, setNgo] = React.useState<NGO | null>(null);
+  const [stats, setStats] = React.useState<Stats>({ children: 0, certificates: 0, celebrations: 0 });
+  const [hasNgo, setHasNgo] = React.useState<boolean | null>(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!loading && !user) {
       navigate("/auth");
     }
   }, [user, loading, navigate]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (user) {
       fetchNgoData();
     }
