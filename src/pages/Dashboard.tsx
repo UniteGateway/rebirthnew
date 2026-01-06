@@ -162,7 +162,7 @@ export default function Dashboard() {
 
         {/* Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-          <div className="bg-card rounded-xl border border-border p-6">
+          <Link to="/children" className="bg-card rounded-xl border border-border p-6 hover:border-primary transition-colors">
             <div className="flex items-center gap-4">
               <div className="p-3 bg-secondary rounded-lg">
                 <Users className="h-6 w-6 text-primary" />
@@ -172,7 +172,7 @@ export default function Dashboard() {
                 <p className="text-sm text-muted-foreground">Children</p>
               </div>
             </div>
-          </div>
+          </Link>
           
           <div className="bg-card rounded-xl border border-border p-6">
             <div className="flex items-center gap-4">
