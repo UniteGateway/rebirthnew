@@ -11,6 +11,9 @@ import NgoRegister from "./pages/NgoRegister";
 import ChildNew from "./pages/ChildNew";
 import ChildDetail from "./pages/ChildDetail";
 import ChildrenList from "./pages/ChildrenList";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +33,9 @@ const App = () => (
             <Route path="/children" element={<ChildrenList />} />
             <Route path="/children/new" element={<ChildNew />} />
             <Route path="/children/:id" element={<ChildDetail />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/contact" element={<Contact />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
