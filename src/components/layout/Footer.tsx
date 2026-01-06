@@ -37,7 +37,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <img src={rebirthLogo} alt="Rebirth" className="h-10 w-auto brightness-0 invert" />
+              <img src={rebirthLogo} alt="Rebirth" className="h-16 w-auto brightness-0 invert" />
               <span className="text-xl font-bold lowercase">rebirth</span>
             </Link>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
