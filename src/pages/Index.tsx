@@ -10,6 +10,7 @@ import { SponsorSection } from "@/components/sections/SponsorSection";
 import { PartnerSection } from "@/components/sections/PartnerSection";
 import { EthicsSection } from "@/components/sections/EthicsSection";
 import { ImpactSection } from "@/components/sections/ImpactSection";
+import { BlessingsDateSection } from "@/components/sections/BlessingsDateSection";
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
         <HowItWorksSection />
         <CertificateSection />
         <CelebrationsSection />
+        <BlessingsDateSection />
         <SponsorSection />
         <PartnerSection />
         <EthicsSection />

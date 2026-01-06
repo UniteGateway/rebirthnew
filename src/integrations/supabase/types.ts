@@ -175,6 +175,44 @@ export type Database = {
           },
         ]
       }
+      date_recommendations: {
+        Row: {
+          blessing_message: string | null
+          child_id: string | null
+          created_at: string
+          id: string
+          recommended_date: string
+          voter_email: string | null
+          voter_name: string | null
+        }
+        Insert: {
+          blessing_message?: string | null
+          child_id?: string | null
+          created_at?: string
+          id?: string
+          recommended_date: string
+          voter_email?: string | null
+          voter_name?: string | null
+        }
+        Update: {
+          blessing_message?: string | null
+          child_id?: string | null
+          created_at?: string
+          id?: string
+          recommended_date?: string
+          voter_email?: string | null
+          voter_name?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "date_recommendations_child_id_fkey"
+            columns: ["child_id"]
+            isOneToOne: false
+            referencedRelation: "children"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       donations: {
         Row: {
           amount: number
