@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
 import { Cake, Gift, Users, Music, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import celebrationImage from "@/assets/celebration.jpg";
+import birthdayCakeImage from "@/assets/birthday-cake.jpg";
 
 const celebrationFeatures = [
   {
@@ -36,30 +37,51 @@ export function CelebrationsSection() {
   return (
     <section className="section-padding bg-gradient-to-b from-coral-light/30 to-background">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            <span className="text-coral">Celebrations</span> That Matter
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Every rebirth deserves to be celebrated with joy, love, and community.
-            Our celebrations create lasting memories for children who never had a birthday.
-          </p>
-        </div>
-
-        {/* Features Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-          {celebrationFeatures.map((feature) => (
-            <div
-              key={feature.title}
-              className="bg-card rounded-2xl border border-border p-6 text-center hover-lift"
-            >
-              <div className="inline-flex items-center justify-center w-14 h-14 bg-coral-light rounded-full mb-4">
-                <feature.icon className="h-7 w-7 text-coral" />
-              </div>
-              <h3 className="font-semibold text-foreground mb-2">{feature.title}</h3>
-              <p className="text-sm text-muted-foreground">{feature.description}</p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+          {/* Image */}
+          <div className="relative">
+            <img 
+              src={celebrationImage} 
+              alt="Children celebrating together" 
+              className="rounded-3xl shadow-xl w-full h-[400px] object-cover"
+            />
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden shadow-lg border-4 border-background">
+              <img 
+                src={birthdayCakeImage} 
+                alt="Birthday celebration" 
+                className="w-full h-full object-cover"
+              />
             </div>
-          ))}
+          </div>
+
+          {/* Content */}
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <span className="text-coral">Celebrations</span> That Matter
+            </h2>
+            <p className="text-muted-foreground mb-8">
+              Every rebirth deserves to be celebrated with joy, love, and community.
+              Our celebrations create lasting memories for children who never had a birthday.
+            </p>
+
+            {/* Features Grid */}
+            <div className="grid grid-cols-2 gap-4">
+              {celebrationFeatures.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="flex items-start gap-3 p-4 bg-card rounded-xl border border-border"
+                >
+                  <div className="p-2 bg-coral-light rounded-lg flex-shrink-0">
+                    <feature.icon className="h-5 w-5 text-coral" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground text-sm">{feature.title}</h3>
+                    <p className="text-xs text-muted-foreground">{feature.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* CTA */}

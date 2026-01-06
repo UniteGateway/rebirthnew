@@ -1,21 +1,25 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Heart, Calendar, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import heroImage from "@/assets/hero-children.jpg";
 
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-      {/* Background decoration */}
+      {/* Background image with overlay */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-coral-light/30 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/40 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
+        <img 
+          src={heroImage} 
+          alt="Children smiling together" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background" />
       </div>
 
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary rounded-full mb-8 animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/90 backdrop-blur-sm rounded-full mb-8 animate-fade-in">
             <Heart className="h-4 w-4 text-coral" />
             <span className="text-sm font-medium text-foreground/80">A symbolic gift of identity</span>
           </div>
@@ -41,14 +45,14 @@ export function HeroSection() {
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild>
+            <Button size="lg" variant="outline" className="bg-background/50 backdrop-blur-sm" asChild>
               <Link to="/auth?mode=register">Partner as NGO</Link>
             </Button>
           </div>
 
           {/* Feature highlights */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 md:mt-24 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-            <div className="flex flex-col items-center gap-3 p-6 bg-card rounded-2xl border border-border hover-lift">
+            <div className="flex flex-col items-center gap-3 p-6 bg-card/90 backdrop-blur-sm rounded-2xl border border-border hover-lift">
               <div className="p-3 bg-secondary rounded-full">
                 <Calendar className="h-6 w-6 text-primary" />
               </div>
@@ -58,7 +62,7 @@ export function HeroSection() {
               </p>
             </div>
 
-            <div className="flex flex-col items-center gap-3 p-6 bg-card rounded-2xl border border-border hover-lift">
+            <div className="flex flex-col items-center gap-3 p-6 bg-card/90 backdrop-blur-sm rounded-2xl border border-border hover-lift">
               <div className="p-3 bg-coral-light rounded-full">
                 <Heart className="h-6 w-6 text-coral" />
               </div>
@@ -68,7 +72,7 @@ export function HeroSection() {
               </p>
             </div>
 
-            <div className="flex flex-col items-center gap-3 p-6 bg-card rounded-2xl border border-border hover-lift">
+            <div className="flex flex-col items-center gap-3 p-6 bg-card/90 backdrop-blur-sm rounded-2xl border border-border hover-lift">
               <div className="p-3 bg-secondary rounded-full">
                 <Sparkles className="h-6 w-6 text-primary" />
               </div>
