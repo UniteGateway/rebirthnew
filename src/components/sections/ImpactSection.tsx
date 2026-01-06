@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Users, Award, PartyPopper, Building2 } from "lucide-react";
+import handsImage from "@/assets/hands-together.jpg";
 
 const impactStats = [
   {
@@ -76,7 +77,17 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
 
 export function ImpactSection() {
   return (
-    <section className="section-padding">
+    <section className="section-padding relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 -z-10">
+        <img 
+          src={handsImage} 
+          alt="Hands together in unity" 
+          className="w-full h-full object-cover opacity-10"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
+      </div>
+
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -91,7 +102,7 @@ export function ImpactSection() {
           {impactStats.map((stat) => (
             <div
               key={stat.label}
-              className="bg-card rounded-2xl border border-border p-6 md:p-8 text-center hover-lift"
+              className="bg-card/80 backdrop-blur-sm rounded-2xl border border-border p-6 md:p-8 text-center hover-lift"
             >
               <div className="inline-flex items-center justify-center w-14 h-14 bg-secondary rounded-full mb-4">
                 <stat.icon className="h-7 w-7 text-primary" />
